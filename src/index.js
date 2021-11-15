@@ -1,4 +1,5 @@
 const express = require("express");
+require("dotenv").config();
 
 const app = express();
 
@@ -10,5 +11,6 @@ app.get("/", (req, res) => {
 });
 
 require("./controller/AuthController")(app);
+require("./controller/ProjectController")(app);
 
 app.listen(3000);
