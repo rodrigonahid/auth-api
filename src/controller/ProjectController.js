@@ -1,9 +1,7 @@
-const express = require("express");
-const middleware = require("../middlewares/auth");
-const router = express.Router();
+const ProjectController = {
+  test: (req, res) => {
+    res.send({ ok: true });
+  },
+};
 
-router.get("/", (req, res) => {
-  res.send({ ok: true });
-});
-
-module.exports = (app) => app.use("/projects", middleware, router);
+module.exports = ProjectController;
