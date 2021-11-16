@@ -10,6 +10,11 @@ const AuthMiddleware = require("./middlewares/auth");
 // Auth
 routes.post("/auth/register", AuthController.register);
 routes.post("/auth/authenticate", AuthController.authenticate);
+routes.post(
+  "/auth/forgot_password",
+  AuthMiddleware,
+  AuthController.forgotPassword
+);
 
 // Project
 routes.get("/projects", AuthMiddleware, ProjectController.test);
